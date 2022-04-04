@@ -5,31 +5,18 @@ import HomePage from "./components/HomePage";
 import NavBar from "./components/NavBar";
 import Box from "@mui/material/Box";
 function App() {
-  const [countries, setCountries] = useState();
-
-  const fetchData = async () => {
-    try {
-      const data = await axios.get("https://restcountries.com/v2/all");
-
-      setCountries(data.data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
   //function that will filter the fetch based on country name
-  const filterByCountryName = (name) => {};
+  const filterByCountryName = (collection, searchValue) => {
+    return collection.filter(
+      (country) => country.name.indexOf(searchValue) > -1
+    );
+  };
   //function that will filter the fetch based on region
   const filterByRegion = (region) => {};
   return (
     <div className="App" id="app">
       <NavBar />
-      <>
-        <HomePage countries={countries} />
-      </>
+      <HomePage />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 
 const MediaCard = (props) => {
@@ -11,7 +12,8 @@ const MediaCard = (props) => {
     <Card sx={{ maxWidth: 375 }}>
       <CardMedia
         component="img"
-        height="190"
+        height="190px"
+        sx={{ width: "100%" }}
         image={props.flag}
         alt="some country flag"
       />
